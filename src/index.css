@@ -96,16 +96,17 @@
   * {
     @apply border-border;
   }
-  html{
+  html {
     @apply scroll-smooth;
   }
 
   body {
     @apply bg-background text-foreground transition-colors duration-300;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
   }
 }
-
 
 @utility container {
   margin-inline: auto;
@@ -141,7 +142,7 @@
   @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
 }
 
-@utility gradient-border{
+@utility gradient-border {
   @apply relative rounded-md;
   background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)));
   background-clip: padding-box;
@@ -164,7 +165,7 @@
   box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
 }
 
-#root{
+#root {
   max-width: 100%;
   margin: 0 auto;
   padding: 0;
