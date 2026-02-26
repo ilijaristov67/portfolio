@@ -56,7 +56,7 @@ export const AboutSection = () => {
                 <div className="text-left">
                   <h4 className="font-semibold text-lg">UI/UX Design</h4>
                   <p className="text-muted-foreground">
-                   Designing intuitive user interfaces and seamless user experiences.
+                    Designing intuitive user interfaces and seamless user experiences.
                   </p>
                 </div>
               </div>
