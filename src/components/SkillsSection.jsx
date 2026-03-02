@@ -5,34 +5,22 @@ const skills = [
   // ===== FRONTEND =====
   { name: "HTML/CSS", level: 85, category: "frontend" },
   { name: "JavaScript", level: 85, category: "frontend" },
-  { name: "React", level: 80, category: "frontend" },
-  { name: "Tailwind CSS", level: 85, category: "frontend" },
-  { name: "Vite", level: 80, category: "frontend" },
+  { name: "React", level: 70, category: "frontend" },
+  { name: "Tailwind CSS", level: 70, category: "frontend" },
 
   // ===== BACKEND =====
   { name: "PHP", level: 90, category: "backend" },
   { name: "Laravel", level: 95, category: "backend" },
   { name: "REST API Design", level: 90, category: "backend" },
   { name: "MySQL", level: 90, category: "backend" },
-  { name: "Database Design", level: 90, category: "backend" },
-  { name: "Eloquent ORM", level: 95, category: "backend" },
-  { name: "Automated Testing (Pest)", level: 90, category: "backend" },
 
   // ===== DEVOPS =====
   { name: "Docker", level: 85, category: "devops" },
   { name: "Linux (WSL2)", level: 85, category: "devops" },
   { name: "CI/CD (GitHub Actions)", level: 80, category: "devops" },
-
-  // ===== TOOLS =====
-  { name: "Git", level: 90, category: "tools" },
-  { name: "GitHub", level: 90, category: "tools" },
-  { name: "PhpStorm", level: 95, category: "tools" },
-  { name: "VS Code", level: 85, category: "tools" },
-  { name: "Postman", level: 85, category: "tools" },
-  { name: "Netlify", level: 80, category: "tools" },
 ];
 
-const categories = ["all", "frontend", "backend", "devops", "tools"];
+const categories = ["all", "frontend", "backend", "devops"];
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const filteredSkills = skills.filter(

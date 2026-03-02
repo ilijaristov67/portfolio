@@ -1,4 +1,4 @@
-import { Briefcase, Code, User } from "lucide-react";
+import {Briefcase, Code, Code2, Database, User} from "lucide-react";
 
 export const AboutSection = () => {
   return (
@@ -10,15 +10,14 @@ export const AboutSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <h3 className="text-2xl font-semibold">Passionate Web Developer & Something else</h3>
+            <h3 className="text-2xl font-semibold">Backend-Focused Software Engineer</h3>
             <p className="text-muted-foreground">
-              With over 3 years of experience in web development, I specialize in creating
-              responsive, accessible and performant web applications using modern technologies.
+              I build structured, production-ready systems with a strong focus on clean architecture,
+              data integrity, and long-term maintainability.
             </p>
             <p className="text-muted-foreground">
-              I am passionate about creating elegant solutions to complex problems, and I am
-              constantly learning new technologies and techniques to stay at the forefront of the
-              ever-evolving web landscape.
+              Most of my work centers around backend development, domain modeling,
+              while also delivering modern interfaces that connect seamlessly to well-designed APIs.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
@@ -51,12 +50,13 @@ export const AboutSection = () => {
             <div className="gradient-border p-6 card-hover">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-full bg-primary10">
-                  <User className="h-6 w-6 text-primary" />
+                  <Database className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg">UI/UX Design</h4>
+                  <h4 className="font-semibold text-lg">Backend Engineering</h4>
                   <p className="text-muted-foreground">
-                    Designing intuitive user interfaces and seamless user experiences.
+                    Building robust APIs, business logic, and data-driven systems
+                    focused on reliability, performance, and data integrity.
                   </p>
                 </div>
               </div>
@@ -64,12 +64,13 @@ export const AboutSection = () => {
             <div className="gradient-border p-6 card-hover">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-full bg-primary10">
-                  <Briefcase className="h-6 w-6 text-primary" />
+                  <Code2 className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg">Project Management</h4>
+                  <h4 className="font-semibold text-lg">DevOps & Deployment</h4>
                   <p className="text-muted-foreground">
-                    Leading projects from conception to completion with agile methodologies
+                    Containerized environments, version control workflows,
+                    and production-ready deployment pipelines.
                   </p>
                 </div>
               </div>
