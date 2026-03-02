@@ -1,6 +1,17 @@
-import {Mail, MapPin, Phone} from "lucide-react";
+import {Facebook, Github, Instagram, Linkedin, Mail, MapPin, Phone, Send} from "lucide-react";
+import {cn} from "@/lib/utils.js";
+import { toast } from "sonner";
 
 export const ContactSection = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setTimeout(()=>{
+            toast.success("Message sent!", {
+                description: "I’ll get back to you soon.",
+                duration: 4000,
+            });
+        }, 1000)
+    }
   return <section
       id="contact"
       className="py-24 px-4 relative bg-secondary/30"
@@ -61,6 +72,74 @@ export const ContactSection = () => {
                         </div>
                     </div>
                 </div>
+
+                <div className="pt-8">
+                    <h4 className="font-mediummb-4">
+                        Connect With Me
+                    </h4>
+                    <div className="flex space-x-4 justify-center">
+                        <a href="https://www.instagram.com/ristov__i/" target="_blank">
+                            <Instagram/>
+
+                        </a>
+                        <a href="https://www.facebook.com/ile.ristov1/" target="_blank">
+                            <Facebook/>
+                        </a>
+                        <a href="https://www.linkedin.com/in/ilija-ristov-a36a77208/">
+                            <Linkedin/>
+                        </a>
+                        <a href="https://github.com/ilijaristov67" target="_blank">
+                            <Github/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div className="bg-card p-8 rounded-lg shadow-xs">
+                <h3 className="text-2xl font-semibold mb-6">
+                    Send a Message
+                </h3>
+
+                <form onSubmit={handleSubmit} className="space-y-6">
+                    <div>
+                        <label htmlFor="name" className="block text-sm font-medium mb-2">Your Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            required
+                            className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
+                            placeholder="Your Name..."
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="email" className="block text-sm font-medium mb-2">Your Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
+                            placeholder="Your Email..."
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="message" className="block text-sm font-medium mb-2">Your Message</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            required
+                            className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none"
+                            placeholder="Hello, I would like to talk about..."
+                        />
+                    </div>
+                    <button type="submit" className={cn("cosmic-btn w-full flex items-center justify-center gap-2",
+                        ""
+                    )}>
+                        Send Message
+                        <Send size={16}/>
+                    </button>
+                </form>
             </div>
         </div>
     </div>
