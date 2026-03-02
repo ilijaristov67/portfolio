@@ -1,17 +1,44 @@
 import {Facebook, Github, Instagram, Linkedin, Mail, MapPin, Phone, Send} from "lucide-react";
 import {cn} from "@/lib/utils.js";
 import { toast } from "sonner";
+import {useState} from "react";
 
 export const ContactSection = () => {
-    const handleSubmit = (e) => {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        setTimeout(()=>{
+        setIsSubmitting(true);
+
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+
+        try {
+            await fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams({
+                    "form-name": "contact",
+                    ...Object.fromEntries(formData),
+                }).toString(),
+            });
+
             toast.success("Message sent!", {
                 description: "I’ll get back to you soon.",
                 duration: 4000,
             });
-        }, 1000)
-    }
+
+            form.reset();
+        } catch {
+            toast.error("Something went wrong.", {
+                description: "Please try again later.",
+            });
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
+
   return <section
       id="contact"
       className="py-24 px-4 relative bg-secondary/30"
@@ -99,8 +126,15 @@ export const ContactSection = () => {
                 <h3 className="text-2xl font-semibold mb-6">
                     Send a Message
                 </h3>
-
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form
+                    name="contact"
+                    method="POST"
+                    action="/"
+                    data-netlify="true"
+                    onSubmit={handleSubmit}
+                    className="space-y-6"
+                >
+                    <input type="hidden" name="form-name" value="contact" />
                     <div>
                         <label htmlFor="name" className="block text-sm font-medium mb-2">Your Name</label>
                         <input
@@ -133,8 +167,7 @@ export const ContactSection = () => {
                             placeholder="Hello, I would like to talk about..."
                         />
                     </div>
-                    <button type="submit" className={cn("cosmic-btn w-full flex items-center justify-center gap-2",
-                        ""
+                    <button type="submit" disabled={isSubmitting} className={cn("cosmic-btn w-full flex items-center justify-center gap-2"
                     )}>
                         Send Message
                         <Send size={16}/>
