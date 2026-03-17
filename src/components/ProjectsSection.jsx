@@ -31,6 +31,16 @@ const projects = [
     url: "https://guess-my-number-ilija.netlify.app/",
     gitHubUrl: "https://github.com/ilijaristov67/guess_my_number",
   },
+  {
+    id: 4,
+    title: "To-Do Management System",
+    description:
+        "A modular To-Do application designed with a controller–service architecture, enabling scalable and maintainable backend logic. The system supports real-time WebSocket notifications, import/export workflows, and CSV-based summary generation for task insights. Built with Laravel and MySQL.",
+    image: "/projects/to_do_app.png",
+    tags: ["Laravel", "MySql"],
+    url: "#",
+    gitHubUrl: "https://github.com/ilijaristov67/to_do_app",
+  },
 ];
 
 export const ProjectsSection = () => {
