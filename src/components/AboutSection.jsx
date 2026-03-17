@@ -12,7 +12,7 @@ export const AboutSection = () => {
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold">Backend-Focused Software Engineer</h3>
             <p className="text-muted-foreground">
-              I build structured, production-ready systems with a strong focus on clean architecture,
+              With 3+ years of professional experience, I build structured, production-ready systems with a strong focus on clean architecture,
               data integrity, and long-term maintainability.
             </p>
             <p className="text-muted-foreground">
